@@ -1,0 +1,21 @@
+# Primer Script para Backup de una BD MySQL
+################################################
+$d= Get-Date
+$dString = $d.Year.ToString() + "-" + $d.Month.ToString() + "-" + $d.Day.ToString() + "_" + $d.Hour.ToString() + "-" + $d.Minute.ToString() + "-" + $d.Second.ToString()
+$backupFilePath = "D:\backups\bdmaca_" + $dString + ".sql"
+$cmd = "& 'C:\AppServ\MySQL\bin\mysqldump.exe ' -u backupuser -pclinicaBLENS bdmaca "
+Write-Host $cmd
+Invoke-Expression $cmd | Out-File $backupFilePath -Encoding ASCII
+
+# Script modificado
+# Autor: Cristian Castro Del Carpio - facebook.com/xtiancastro7
+# Fecha: 2015-05-05
+# Fuente: SolidShellSecurity.com
+################################################
+$d = Get-Date
+$dString = $d.Year.ToString() + "-" + $d.Month.ToString() + "-" + $d.Day.ToString() + "_" + $d.Hour.ToString() + "-" + $d.Minute.ToString() + "-" + $d.Second.ToString()
+$backupFilePath = "D:\backups\bdmaca_" + $dString + ".sql"
+Set-Location -Path C:\AppServ\MySQL\bin
+$cmd = "mysqldump.exe -u mamacanguro -pclinica --databases bdmaca --routines > " + $backupFilePath
+Write-Host $cmd
+Invoke-Expression $cmd | out-null

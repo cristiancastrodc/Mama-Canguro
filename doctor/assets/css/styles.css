@@ -1,0 +1,11 @@
+.pg-header{
+	text-align: center;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-weight: 100;
+	font-size: 45px;
+	background: rgba(244, 135, 101, 0.66);
+	color: #FFF;
+	padding: 0.15em 0.5em;
+	font-weight: bold;
+	font-size: 2.7em;
+}

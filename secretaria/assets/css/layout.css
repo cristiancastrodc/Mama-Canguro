@@ -1,0 +1,93 @@
+/* Estilos personalizados */
+.pg-header{
+  text-align: center;
+  font-family: 'Ruda', sans-serif;
+  font-size: 45px;
+  background: rgba(244, 135, 101, 0.66);
+  color: #FFF;
+  padding: 0.15em 0.5em;
+  font-weight: bold;
+}
+a:hover, a:focus {
+  color: #FFFFFF !important;
+  text-decoration: underline !important;
+}
+a {
+  color: #FFFFFF !important;
+  text-decoration: none !important;
+}
+.fa-4x {
+  position: inherit !important;
+  font-size: 6em !important;
+}
+.banner-grid{
+  float: right ;
+  padding:  inherit;
+  position: inherit;
+}
+.resaltar:hover{
+  background-color: rgba(244, 135, 101, 0.66) !important;
+}
+.weather-3 {
+  background: rgba(114, 189, 163, 0.72) !important;
+
+}
+.banner-grid{
+  width: 11.0%;
+}
+
+.form-panel,
+.content-panel{
+  background: rgba(218, 247, 229, 0.91) !important;
+}
+
+.form-panel h4.mb{
+  font-weight: bold;
+}
+
+#main-content section h3{
+  font-weight: bold;
+}
+
+.form-horizontal div > label{
+  font-weight: bold;
+}
+
+.right-align{
+  text-align: right;
+}
+
+.center-align{
+  text-align: center;  
+}
+
+.center{
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+.bg-min-height{
+  min-height: 650px;
+}
+
+.site-footer{
+  background: #FF865C !important;
+}
+
+.site-footer div{
+  color: #000000 !important;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.fa-minus{
+  cursor: pointer;
+}
+
+.numero {
+  text-align: right;
+  padding-right: 20px !important;
+}

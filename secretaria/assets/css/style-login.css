@@ -1,0 +1,14 @@
+div#loginModal {
+  background: url("../images/bg.jpg") no-repeat fixed center center;
+  background-size: cover;
+}
+.pg-header{
+	text-align: center;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-weight: 100;
+	font-size: 45px;
+	background: rgba(114, 189, 163, 0.86);
+	color: #FFF;
+	padding: 0.15em 0.5em;
+	font-weight: bold;
+}

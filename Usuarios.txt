@@ -1,0 +1,5 @@
+USUARIOS PARA ACCESO
+Admin: 76859438 - rafael
+Biologo: 24567898 - raul
+Doctor: 24242727 - fernandito
+Secretaria: 72635898 - secretaria

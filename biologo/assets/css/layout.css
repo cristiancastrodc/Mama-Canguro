@@ -1,0 +1,19 @@
+.uppercase {
+  text-transform: uppercase;
+}
+
+.site-footer{
+  background: #FF865C !important;
+}
+
+.site-footer div{
+  color: #000000 !important;
+}
+
+table.tabla-pers tbody tr:nth-child(even) {
+  background: #FCF8E3;
+}
+
+table.tabla-pers > tbody > tr:nth-child(odd) > td{
+  background: #D9EDF7;
+}

@@ -1,0 +1,6 @@
+LO QUE FALTA
+1. Corregir formatos de exámenes e ingresar formatos faltantes.
+2. Quitar archivos auxiliares [Backup Script, Notas, Usuarios].
+3. Cambiar el footer por el nombre de la versión final.
+4. Exportar la base de datos con los datos oficiales.
+5. ¿Separar el sistema en paquetes?
