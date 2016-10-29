@@ -1,6 +1,8 @@
 <?php
   // Inicializar la sesion
-  session_start();
+  if (!isset($_SESSION)) {
+    session_start();
+  }
   // Recuperamos el dni del usuario
   $User = $_SESSION["UsuarioLogueado"];
   /****************************************
@@ -12,6 +14,6 @@
   $consulta = "CALL sp_tausuario_cambiar_estado('$User', 'Habilitado')";
   mysqli_query($conexion, $consulta);
   session_destroy();
-  header("Location: index.php");
+  header("Location: /");
   exit;
 ?>

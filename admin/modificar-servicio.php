@@ -3,30 +3,15 @@
   require_once "../global.php";
   require_once "components.php";
   // Inicializar la sesion
-  session_start();
+  if(!isset($_SESSION)) {
+    session_start();
+  }
   // Si el usuario no es de tipo administrador, o no está logueado, redireccionar
   _redireccionar('admin');
   // Conexión a la base de datos
   $conexion = mysqli_connect($global_host, $global_user_db, $global_pass_db, $global_db);
   // Recuperar los parámetros enviados por GET
   $id_servicio = $_GET["idservicio"];
-  // Recuperar el contenido del servicio
-  $sentencia = "CALL sp_taservicio_listar($id_servicio);";
-  if (mysqli_multi_query($conexion, $sentencia)) {
-    if ($resultado = mysqli_store_result($conexion)) {
-      if ($servicio = mysqli_fetch_row($resultado)) {
-        $denominacion = $servicio[0];
-        $denominacion = utf8_encode($denominacion);
-        $precio = $servicio[1];
-        $tipo = $servicio[2];
-        $descripcion = $servicio[3];
-        $descripcion = utf8_encode($descripcion);
-        $formato = $servicio[4];
-        $formato = utf8_encode($formato);
-        $consultorio = $servicio[5];
-      }
-    }
-  }
 ?>
 <!DOCTYPE html>
 <html>
@@ -74,6 +59,25 @@
             <div class="col-lg-12">
               <div class="form-panel">
                 <h3>&nbsp;<i class="fa fa-angle-double-right"></i> Modificar servicio</h3>
+                <?php
+                  // Recuperar el contenido del servicio
+                  $sentencia = "CALL sp_taservicio_listar($id_servicio)";
+                  if (mysqli_multi_query($conexion, $sentencia)) {
+                    if ($resultado = mysqli_store_result($conexion)) {
+                      if ($servicio = mysqli_fetch_row($resultado)) {
+                        $denominacion = $servicio[0];
+                        $denominacion = utf8_encode($denominacion);
+                        $precio = $servicio[1];
+                        $tipo = $servicio[2];
+                        $descripcion = $servicio[3];
+                        $descripcion = utf8_encode($descripcion);
+                        $formato = $servicio[4];
+                        $formato = utf8_encode($formato);
+                        $consultorio = $servicio[5];
+                      }
+                    }
+                  }
+                ?>
                 <form action="actualizar-datos-servicio.php" method="POST" class="form-horizontal style-form">
                   <input type="hidden" id="txtIdServicio" name="txtIdServicio" value="<?=$id_servicio?>">
                   <div class="form-group">

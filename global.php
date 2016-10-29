@@ -1,18 +1,18 @@
 <?php
-  $global_host = '127.0.01';
+  $global_host = '127.0.0.1';
   $global_user_db = 'root';
   $global_pass_db = '';
   $global_db = 'bdmaca';
 
   function _redireccionar($tipoUsuario){
     if ($_SESSION["UsuarioLogueado"] == "") {
-      header("Location: /mamacanguro/sin-acceso.html");
+      header("Location: /sin-acceso.html");
       exit;
     } elseif ($_SESSION["EstadoUsuario"] == "En Bloqueo") {
-      header("Location: /mamacanguro/lock_screen.php");
+      header("Location: /lock_screen.php");
       exit;
     } elseif ($_SESSION["TipoUsuario"] != $tipoUsuario) {
-      header("Location: /mamacanguro/".$_SESSION["TipoUsuario"]);
+      header("Location: /".$_SESSION["TipoUsuario"]);
       exit;
     }
   }

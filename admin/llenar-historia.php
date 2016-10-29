@@ -4,7 +4,9 @@
   require_once "components.php";
   require_once "funciones-doctor.php";
   // Inicializar la sesion
-  session_start();
+  if (!isset($_SESSION)) {
+    session_start();
+  }
   // Si el usuario no es de tipo administrador, o no está logueado, redireccionar
   _redireccionar('admin');
   // Conexión a la base de datos

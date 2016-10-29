@@ -12,7 +12,6 @@
   require_once "global.php";
   $conexion = mysqli_connect($global_host, $global_user_db, $global_pass_db, $global_db);
   $consulta = "CALL sp_tausuario_existe('".$usuario."','".$clave."')";
-  $consulta = "CALL sp_tausuario_existe('".$usuario."','".$clave."')";
   mysqli_multi_query($conexion, $consulta);
   $Res = mysqli_store_result($conexion);
   $Nro = mysqli_num_rows($Res);
@@ -24,7 +23,7 @@
     $Tipo = $Fila[2];
     $Estado = $Fila[3];
     if ($Estado =="Habilitado" || $Estado =="En Sesion") {
-      $ubicacion = "Location: /mamacanguro/".$Tipo;
+      $ubicacion = "Location: /".$Tipo;
       $_SESSION["UsuarioLogueado"] = $usuario;
       $_SESSION["TipoUsuario"] = $Tipo;
       $_SESSION["EstadoUsuario"] = "";

@@ -2,7 +2,9 @@
   // Llamado a las variables globales
   require_once "../global.php";
   // Inicializar la sesion
-  session_start();
+  if (!isset($_SESSION)) {
+    session_start();
+  }
   setlocale(LC_ALL, '');
   // Asignamos la zona horaria, para cálculos con fechas
   date_default_timezone_set('America/Lima');

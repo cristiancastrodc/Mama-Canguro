@@ -3,7 +3,9 @@
   require_once "../global.php";
   require_once "components.php";
   // Inicializar la sesion
-  session_start();
+  if(!isset($_SESSION)) {
+    session_start();
+  }
   // Si el usuario no es de tipo secretaría, o no está logueado, redireccionar
   _redireccionar('admin');
   // Recuperar el mensaje de confirmación

@@ -2,7 +2,9 @@
   // Llamado a las variables globales
   require_once "../global.php";
   // Inicializar la sesion
-  session_start();
+  if (!isset($_SESSION)) {
+    session_start();
+  }
   setlocale(LC_ALL, '');
   // Asignamos la zona horaria, para cálculos con fechas
   date_default_timezone_set('America/Lima');
@@ -29,6 +31,7 @@
     // Sentencia para recuperar los datos del usuario
     $sentencia = "CALL sp_tausuario_existe_new($User)";
     if (mysqli_multi_query($conexion, $sentencia)) {
+      echo "query";
       if ($resultado = mysqli_store_result($conexion)) {
         if ($fila = mysqli_fetch_array($resultado)) {
           $nombre = $fila["vch_nombres"];
@@ -37,6 +40,8 @@
         mysqli_free_result($resultado);
       }
       mysqli_next_result($conexion);
+    } else {
+      echo mysqli_error($conexion);
     }
 
     echo "<aside>";
