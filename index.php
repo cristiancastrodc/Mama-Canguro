@@ -1,9 +1,10 @@
 <?php
   // Inicializar la sesion
-  session_start();
-  // Si el usuario está logueado, redireccionar a su menú
+  if(!isset($_SESSION)) {
+    session_start();
+  }  // Si el usuario está logueado, redireccionar a su menú
   if (isset($_SESSION["TipoUsuario"]) && $_SESSION["TipoUsuario"] != "") {
-    header("Location: /mamacanguro/".$_SESSION["TipoUsuario"]);
+    header("Location: /".$_SESSION["TipoUsuario"]);
   }
 ?>
 <!DOCTYPE html>

@@ -2,8 +2,9 @@
   // Llamado a las variables globales
   require_once "../global.php";
   // Inicializar la sesion
-  session_start();
-  // Si el usuario no es de tipo administrador, o no está logueado, redireccionar
+  if(!isset($_SESSION)) {
+    session_start();
+  }  // Si el usuario no es de tipo administrador, o no está logueado, redireccionar
   _redireccionar('doctor');
   // Conexión a la base de datos
   $conexion_aux = mysqli_connect($global_host, $global_user_db, $global_pass_db, $global_db);

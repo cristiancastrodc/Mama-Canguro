@@ -2,16 +2,21 @@
   // Llamado a las variables globales
   require_once "../global.php";
   //inicializar la sesion
-  session_start();
-  // Si el usuario no es de tipo administrador, o no está logueado, redireccionar
+  if(!isset($_SESSION)) {
+    session_start();
+  }  // Si el usuario no es de tipo administrador, o no está logueado, redireccionar
   _redireccionar('biologo');
   $User = $_SESSION["UsuarioLogueado"];
-  //Recuperar la informacion del usuario
-  $NroAte = $_GET["Atencion"];
   $Enlace = mysqli_connect($global_host, $global_user_db, $global_pass_db, $global_db);
-  $Consulta ="CALL sp_taatencion_emuestra('$NroAte','$User');";
-  mysqli_multi_query($Enlace,$Consulta);
-  mysqli_next_result($Enlace);
+  //Recuperar la informacion del usuario
+  if (isset($_GET["Atencion"])) {
+    $NroAte = $_GET["Atencion"];
+    if (isset($NroAte)) {
+      $Consulta ="CALL sp_taatencion_emuestra('$NroAte','$User');";
+      mysqli_multi_query($Enlace,$Consulta);
+      mysqli_next_result($Enlace);
+    }
+  }
   echo "
   <div class='col-lg-8 main-chart' >
     <div class='row mt'>
@@ -32,6 +37,7 @@
   $sql = "CALL sp_taatencion_faltaresultado();";
   if (mysqli_multi_query($Enlace,$sql)) {
     if ($result=mysqli_store_result($Enlace)) {
+      $i = 1;
       while ($row=mysqli_fetch_row($result)) {
         $Atencion = $row[0];
         $DNI=$row[1];
@@ -47,6 +53,7 @@
                   <td class='uppercase'>$Servicio</td>
                   <td>$Fecha</td>
                 </tr>";
+        $i++;
       }
       mysqli_free_result($result);
     }

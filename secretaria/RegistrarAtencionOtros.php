@@ -3,8 +3,9 @@
   require_once "../global.php";
   require_once "menu.php";
   // Inicializar la sesion
-  session_start();
-  // Si el usuario no es de tipo secretaría, o no está logueado, redireccionar
+  if(!isset($_SESSION)) {
+    session_start();
+  }  // Si el usuario no es de tipo secretaría, o no está logueado, redireccionar
   _redireccionar('secretaria');
 ?>
 <!DOCTYPE HTML>

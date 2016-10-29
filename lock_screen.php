@@ -1,7 +1,8 @@
 <?php
   // Inicializar la sesion
-  session_start();
-  // Recuperamos el identificador del usuario
+  if(!isset($_SESSION)) {
+    session_start();
+  }  // Recuperamos el identificador del usuario
   $User = $_SESSION["UsuarioLogueado"];
   // Si el usuario está logueado, redireccionar a su menú
   if($User == ""){

@@ -2,8 +2,9 @@
   // Llamado a las variables globales
   require_once "../global.php";
   // Inicializar la sesion
-  session_start();
-  setlocale(LC_ALL, '');
+  if(!isset($_SESSION)) {
+    session_start();
+  }  setlocale(LC_ALL, '');
   // Asignamos la zona horaria, para cálculos con fechas
   date_default_timezone_set('America/Lima');
   // Si el usuario no es de tipo administrador, o no está logueado, redireccionar
@@ -81,6 +82,7 @@
   }
 
   function _print_antecedentes_generales($conexion, $id_paciente) {
+    $Menarquia3 = $Irs3 = $RegimenCatamenial3 = $FormulaObstetrica3 = $MetodoPPFF3 = $Alergias3 = $Hipertension3 = $Cirugias3 = $TBC3 = $ETC3 = $Otros = $Temperatura3 = $P3 = $PresionArterial3 = $Peso3 = $PAP3 = $FUR3 = $FUM3 = '';
     $sentencia = "CALL sp_taantecedente_medicina_general_existe('$id_paciente');";
     if (mysqli_multi_query($conexion, $sentencia)) {
       if ($resultado = mysqli_store_result($conexion)) {
@@ -104,111 +106,114 @@
           $FUR3 = $fila[17];
           $FUM3 = $fila[18];
         }
+        ?>
+        <div id='antecedentes'>
+        <form class='form-horizontal style-form'>
+          <h4 class='mb'><i class='fa fa-angle-right'></i> Antecedentes Personales</h4>
+          <div class='form-group'>
+            <label class='col-sm-2 control-label'>Menarquia</label>
+            <div class='col-sm-4'>
+              <input type='text' class='form-control' name='Menarquia' id='Menarquia' value='<?=$Menarquia3?>' autofocus>
+            </div>
+            <label class='col-sm-2 control-label'>IRS</label>
+            <div class='col-sm-4'>
+              <input type='text' class='form-control' name='Irs' id='Irs' value='<?=$Irs3?>'>
+            </div>
+          </div>
+          <div class='form-group'>
+            <label class='col-sm-2 control-label'>Regimen Catamenial</label>
+            <div class='col-sm-4'>
+              <input type='text' class='form-control' name='RegimenCatamenial' id='RegimenCatamenial' value='<?=$RegimenCatamenial3?>'>
+            </div>
+            <label class='col-sm-2 control-label'>Fórmula Obstétrica</label>
+            <div class='col-sm-4'>
+              <input type='text' class='form-control' name='FormulaObstetrica' id='FormulaObstetrica' value='<?=$FormulaObstetrica3?>'>
+            </div>
+          </div>
+          <div class='form-group'>
+            <label class='col-sm-2 control-label'>Método PP.FF. </label>
+            <div class='col-sm-4'>
+              <input type='text' class='form-control' name='MetodoPPFF' id='MetodoPPFF' value='<?=$MetodoPPFF3?>'>
+            </div>
+            <label class='col-sm-2 control-label'>Alergias</label>
+            <div class='col-sm-4'>
+              <input type='text' class='form-control' name='Alergias' id='Alergias' value='<?=$Alergias3?>'>
+            </div>
+          </div>
+          <div class='form-group'>
+            <label class='col-sm-2 control-label'>Hipertensión</label>
+            <div class='col-sm-4'>
+              <input type='text' class='form-control' name='Hipertension' id='Hipertension' value='<?=$Hipertension3?>'>
+            </div>
+            <label class='col-sm-2 control-label'>Cirugias</label>
+            <div class='col-sm-4'>
+              <input type='text' class='form-control' name='Cirugias' id='Cirugias' value='<?=$Cirugias3?>'>
+            </div>
+          </div>
+          <div class='form-group'>
+            <label class='col-sm-2 control-label'>TBC</label>
+            <div class='col-sm-4'>
+              <input type='text' class='form-control' name='TBC' id='TBC' value='<?=$TBC3?>'>
+            </div>
+            <label class='col-sm-2 control-label'>ETS</label>
+            <div class='col-sm-4'>
+              <input type='text' class='form-control' name='ETC' id='ETC' value='<?=$ETC3?>'>
+            </div>
+          </div>
+          <div class='form-group'>
+            <label class='col-sm-2 control-label'>Otros</label>
+            <div class='col-sm-10'>
+              <input type='text' class='form-control' name='Otros' id='Otros' value='<?=$Otros?>'>
+            </div>
+          </div>
+          <h4 class='mb'><i class='fa fa-angle-right'></i> Antecedentes Patológicos</h4>
+          <div class='form-group'>
+            <label class='col-sm-2 control-label'>Temperatura</label>
+            <div class='col-sm-2'>
+              <input type='text' class='form-control' name='Temperatura' id='Temperatura' value='<?=$Temperatura3?>'>
+            </div>
+            <label class='col-sm-2 control-label'>Pulso</label>
+            <div class='col-sm-2'>
+              <input type='text' class='form-control' name='P' id='P' value='<?=$P3?>'>
+            </div>
+            <label class='col-sm-2 control-label'>Presión Arterial </label>
+            <div class='col-sm-2'>
+              <input type='text' class='form-control' name='PresionArterial' id='PresionArterial' value='<?=$PresionArterial3?>'>
+            </div>
+          </div>
+          <div class='form-group'>
+            <label class='col-sm-2 control-label'>Peso</label>
+            <div class='col-sm-4'>
+              <input type='text' class='form-control' name='Peso' id='Peso' value='<?=$Peso3?>'>
+            </div>
+            <label class='col-sm-2 control-label'>PAP</label>
+            <div class='col-sm-4'>
+              <input type='text' class='form-control' name='PAP' id='PAP' value='<?=$PAP3?>'>
+            </div>
+          </div>
+          <div class='form-group'>
+            <label class='col-sm-2 control-label'>FUR</label>
+            <div class='col-sm-4'>
+              <input type='text' class='form-control' name='FUR' id='FUR' value='<?=$FUR3?>'>
+            </div>
+            <label class='col-sm-2 control-label'>FUM</label>
+            <div class='col-sm-4'>
+              <input type='text' class='form-control' name='FUM' id='FUM' value='<?=$FUM3?>'>
+            </div>
+          </div>
+          <a role='button' class='btn btn-primary btn-block' id='guardarAntecedentes'><i class='fa fa-refresh'></i> Guardar Cambios</a>
+        </form>
+        </div>
+        <?php
         mysqli_free_result($resultado);
       }
       mysqli_next_result($conexion);
     }
     // Mostrar el formulario de antecedentes
-    echo "<div id='antecedentes'>";
-    echo "<form class='form-horizontal style-form'>";
-    echo "<h4 class='mb'><i class='fa fa-angle-right'></i> Antecedentes Personales</h4>";
-    echo "<div class='form-group'>";
-      echo "<label class='col-sm-2 control-label'>Menarquia</label>";
-      echo "<div class='col-sm-4'>";
-        echo "<input type='text' class='form-control' name='Menarquia' id='Menarquia' value='$Menarquia3' autofocus>";
-      echo "</div>";
-      echo "<label class='col-sm-2 control-label'>IRS</label>";
-      echo "<div class='col-sm-4'>";
-        echo "<input type='text' class='form-control' name='Irs' id='Irs' value='$Irs3'>";
-      echo "</div>";
-    echo "</div>";
-    echo "<div class='form-group'>";
-      echo "<label class='col-sm-2 control-label'>Regimen Catamenial</label>";
-      echo "<div class='col-sm-4'>";
-        echo "<input type='text' class='form-control' name='RegimenCatamenial' id='RegimenCatamenial' value='$RegimenCatamenial3'>";
-      echo "</div>";
-      echo "<label class='col-sm-2 control-label'>Fórmula Obstétrica</label>";
-      echo "<div class='col-sm-4'>";
-        echo "<input type='text' class='form-control' name='FormulaObstetrica' id='FormulaObstetrica' value='$FormulaObstetrica3'>";
-      echo "</div>";
-    echo "</div>";
-    echo "<div class='form-group'>";
-      echo "<label class='col-sm-2 control-label'>Método PP.FF. </label>";
-      echo "<div class='col-sm-4'>";
-        echo "<input type='text' class='form-control' name='MetodoPPFF' id='MetodoPPFF' value='$MetodoPPFF3'>";
-      echo "</div>";
-      echo "<label class='col-sm-2 control-label'>Alergias</label>";
-      echo "<div class='col-sm-4'>";
-        echo "<input type='text' class='form-control' name='Alergias' id='Alergias' value='$Alergias3'>";
-      echo "</div>";
-    echo "</div>";
-    echo "<div class='form-group'>";
-      echo "<label class='col-sm-2 control-label'>Hipertensión</label>";
-      echo "<div class='col-sm-4'>";
-        echo "<input type='text' class='form-control' name='Hipertension' id='Hipertension' value='$Hipertension3'>";
-      echo "</div>";
-      echo "<label class='col-sm-2 control-label'>Cirugias</label>";
-      echo "<div class='col-sm-4'>";
-        echo "<input type='text' class='form-control' name='Cirugias' id='Cirugias' value='$Cirugias3'>";
-      echo "</div>";
-    echo "</div>";
-    echo "<div class='form-group'>";
-      echo "<label class='col-sm-2 control-label'>TBC</label>";
-      echo "<div class='col-sm-4'>";
-        echo "<input type='text' class='form-control' name='TBC' id='TBC' value='$TBC3'>";
-      echo "</div>";
-      echo "<label class='col-sm-2 control-label'>ETS</label>";
-      echo "<div class='col-sm-4'>";
-        echo "<input type='text' class='form-control' name='ETC' id='ETC' value='$ETC3'>";
-      echo "</div>";
-    echo "</div>";
-    echo "<div class='form-group'>";
-      echo "<label class='col-sm-2 control-label'>Otros</label>";
-      echo "<div class='col-sm-10'>";
-        echo "<input type='text' class='form-control' name='Otros' id='Otros' value='$Otros'>";
-      echo "</div>";
-    echo "</div>";
-    echo "<h4 class='mb'><i class='fa fa-angle-right'></i> Antecedentes Patológicos</h4>";
-    echo "<div class='form-group'>";
-      echo "<label class='col-sm-2 control-label'>Temperatura</label>";
-      echo "<div class='col-sm-2'>";
-        echo "<input type='text' class='form-control' name='Temperatura' id='Temperatura' value='$Temperatura3'>";
-      echo "</div>";
-      echo "<label class='col-sm-2 control-label'>Pulso</label>";
-      echo "<div class='col-sm-2'>";
-        echo "<input type='text' class='form-control' name='P' id='P' value='$P3'>";
-      echo "</div>";
-      echo "<label class='col-sm-2 control-label'>Presión Arterial </label>";
-      echo "<div class='col-sm-2'>";
-        echo "<input type='text' class='form-control' name='PresionArterial' id='PresionArterial' value='$PresionArterial3'>";
-      echo "</div>";
-    echo "</div>";
-    echo "<div class='form-group'>";
-      echo "<label class='col-sm-2 control-label'>Peso</label>";
-      echo "<div class='col-sm-4'>";
-        echo "<input type='text' class='form-control' name='Peso' id='Peso' value='$Peso3'>";
-      echo "</div>";
-      echo "<label class='col-sm-2 control-label'>PAP</label>";
-      echo "<div class='col-sm-4'>";
-        echo "<input type='text' class='form-control' name='PAP' id='PAP' value='$PAP3'>";
-      echo "</div>";
-    echo "</div>";
-    echo "<div class='form-group'>";
-      echo "<label class='col-sm-2 control-label'>FUR</label>";
-      echo "<div class='col-sm-4'>";
-        echo "<input type='text' class='form-control' name='FUR' id='FUR' value='$FUR3'>";
-      echo "</div>";
-      echo "<label class='col-sm-2 control-label'>FUM</label>";
-      echo "<div class='col-sm-4'>";
-        echo "<input type='text' class='form-control' name='FUM' id='FUM' value='$FUM3'>";
-      echo "</div>";
-    echo "</div>";
-    echo "<a role='button' class='btn btn-primary btn-block' id='guardarAntecedentes'><i class='fa fa-refresh'></i> Guardar Cambios</a>";
-    echo "</form>";
-    echo "</div>";
   }
 
   function _print_antecedentes_ginecologicos($conexion, $id_paciente) {
+    $Menarquia = $Irs = $RegimenCatamenial = $FormulaObstetrica = $MetodoPPFF = $Alergias_G = $PAP_G = $FUR_G = $FUM_G = '';
     $sentencia = "CALL sp_taantecedente_ginecologico_existe('$id_paciente');";
     if (mysqli_multi_query($conexion, $sentencia)) {
       if ($resultado = mysqli_store_result($conexion)) {
@@ -280,6 +285,7 @@
   }
 
   function _print_antecedentes_pediatricos($conexion, $id_paciente) {
+    $PesoNacer1 = $Talla1 = $Vacunas1 = $Complicaciones1 = $Culminacion1 = $Parto1 = $NacidoCesarea1 = $Ictericia1 = $ComplicacionesNeonatales1 = $LecheMaterna1 = $EdadAblactacion1 = $AlimientacionActual1 = $Nro_hijo1 = $Alergias1 = '';
     $sentencia = "CALL sp_taantecedente_pediatricos_existe('$id_paciente');";
     if (mysqli_multi_query($conexion, $sentencia)) {
       if ($resultado = mysqli_store_result($conexion)) {

@@ -2,8 +2,9 @@
   // Llamado a las variables globales
   require_once "../global.php";
   //inicializar la sesion
-  session_start();
-  // Si el usuario no es de tipo administrador, o no está logueado, redireccionar
+  if(!isset($_SESSION)) {
+    session_start();
+  }  // Si el usuario no es de tipo administrador, o no está logueado, redireccionar
   _redireccionar('biologo');
   $con = mysqli_connect($global_host, $global_user_db, $global_pass_db, $global_db);
 ?>
@@ -107,13 +108,7 @@
                               <td>$Apellidos</td>
                               <td>$Nombres</td>
                               <td>
-                                <div class='btn-group'>
-                                  <button class='btn btn-primary' onclick='buscarPaciente(".'"'.$DNI.'"'.")'>BUSCAR</button>
-                                  <button data-toggle='dropdown' class='btn btn-primary dropdown-toggle'><span class='caret'></span></button>
-                                  <ul class='dropdown-menu'>
-                                    <li><a onclick='mostrarExamen(".'"'.$DNI.'"'.")' >IMPRIMIR</a></li>
-                                  </ul>
-                                </div>
+                                <button class='btn btn-primary' onclick='buscarPaciente(".'"'.$DNI.'"'.")'>BUSCAR</button>
                               </td>
                             </tr>";
                                     $i++;
@@ -139,11 +134,11 @@
         _print_footer();
       ?>
     </section>
+    <script src="assets/js/jquery-v1.min.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>
     <script language="JavaScript" type="text/javascript" src="ajax.js"></script>
     <script src="assets/js/ie-emulation-modes-warning.js"></script>
     <script src="assets/js/ie10-viewport-bug-workaround.js"></script>
-    <script src="assets/js/jquery-v1.min.js"></script>
     <script src="assets/js/dataTables/jquery.dataTables.js"></script>
     <script src="assets/js/dataTables/dataTables.bootstrap.js"></script>
     <script src="../assets/js/lock.js"></script>

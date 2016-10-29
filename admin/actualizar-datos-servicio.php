@@ -47,5 +47,7 @@
   if (mysqli_multi_query($conexion, $sentencia)) {
     header("Location: confirmacion.php?nromensaje=8");
     exit;
+  } else {
+    echo mysqli_error($conexion);
   }
 ?>

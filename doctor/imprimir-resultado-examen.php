@@ -3,8 +3,9 @@
   require_once "../global.php";
   require_once 'components.php';
   //inicializar la sesion
-  session_start();
-  // Si el usuario no es de tipo administrador, o no está logueado, redireccionar
+  if(!isset($_SESSION)) {
+    session_start();
+  }  // Si el usuario no es de tipo administrador, o no está logueado, redireccionar
   _redireccionar('doctor');
   $conexion = mysqli_connect($global_host, $global_user_db, $global_pass_db, $global_db);
   $nro_atencion =$_GET['nroatencion'];

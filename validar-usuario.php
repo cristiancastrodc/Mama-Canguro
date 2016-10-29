@@ -1,6 +1,8 @@
 <?php
   // Inicializar la sesion
-  session_start();
+  if(!isset($_SESSION)) {
+    session_start();
+  }
   // Recuperamos el usuario y contraseña
   $usuario = $_POST["txtUsuario"];
   $clave = $_POST["txtClave"];
@@ -37,7 +39,7 @@
     ?>
      <script languaje="javascript">
         alert("Usuario Deshabilitado..Comuniquese con el Administrador!");
-        location.href = "index.php";
+        location.href = "/";
      </script>
     <?php
     }
@@ -47,7 +49,7 @@
   ?>
    <script languaje="javascript">
       alert("Error..Inicio de Sesion!..vuelva intentarlo!");
-      location.href = "index.php";
+      location.href = "/";
    </script>
  <?php
   }

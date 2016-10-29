@@ -2,8 +2,9 @@
   // Llamado a las variables globales
   require_once "../global.php";
   //inicializar la sesion
-  session_start();
-  // Si el usuario no es de tipo administrador, o no está logueado, redireccionar
+  if(!isset($_SESSION)) {
+    session_start();
+  }  // Si el usuario no es de tipo administrador, o no está logueado, redireccionar
   _redireccionar('biologo');
   /**************************/
   /*** CUERPO DEL REPORTE ***/

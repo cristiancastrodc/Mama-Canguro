@@ -4,8 +4,9 @@
   require_once "menu.php";
   require_once "reporte-atenciones.php";
   // Inicializar la sesion
-  session_start();
-  // Si el usuario no es de tipo secretaría, o no está logueado, redireccionar
+  if(!isset($_SESSION)) {
+    session_start();
+  }  // Si el usuario no es de tipo secretaría, o no está logueado, redireccionar
   _redireccionar('secretaria');
   // Conexión a la base de datos
   $conexion = mysqli_connect($global_host, $global_user_db, $global_pass_db, $global_db);
