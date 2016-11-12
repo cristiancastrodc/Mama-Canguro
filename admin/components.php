@@ -29,9 +29,11 @@
     // Recuperamos el id/dni del usuario
     $User = $_SESSION["UsuarioLogueado"];
     // Sentencia para recuperar los datos del usuario
-    $sentencia = "CALL sp_tausuario_existe_new($User)";
+    $sentencia = "CALL sp_tausuario_existe_new('$User')";
+    $nombre = '';
+    $apellidos = '';
     if (mysqli_multi_query($conexion, $sentencia)) {
-      echo "query";
+      // echo "query";
       if ($resultado = mysqli_store_result($conexion)) {
         if ($fila = mysqli_fetch_array($resultado)) {
           $nombre = $fila["vch_nombres"];
@@ -119,18 +121,6 @@
               echo "</div>";
               echo "<div class='details'>";
                 echo "<p><a href='#'>";
-                if ($tipo == 'doctor') {
-                  echo "Dr. ";
-                }
-                elseif ($tipo == 'secretaria') {
-                  echo "Srta. ";
-                }
-                elseif ($tipo == 'biologo') {
-                  echo "Blgo. ";
-                }
-                else{
-                  echo "Ing. ";
-                }
                 echo utf8_encode($nombre)."</a><br/>";
                 echo "<muted>";
                   if ($tipo == 'doctor') {
@@ -279,6 +269,7 @@
       echo "<table class='table table-hover table-striped' id='tabla-examenes-sin-entregar'>";
         echo "<thead>";
           echo "<tr>";
+            echo "<th>Nro. Atención</th>";
             echo "<th>Paciente</th>";
             echo "<th>Examen</th>";
             echo "<th>Acción</th>";
@@ -295,6 +286,7 @@
           $nombre_completo = utf8_encode($nombres." ".$apellidos);
           $examen = $fila[3];
           $examen = utf8_encode($examen);
+            echo "<td>$nro_atencion</td>";
             echo "<td>$nombre_completo</td>";
             echo "<td class='uppercase'>$examen</td>";
             echo "<td><a href='atender-recepcion-muestra.php?atencion=$nro_atencion' role='button' class='btn btn-xs btn-success'><i class='fa fa-check'></i> Recibir muestra</a></td>";

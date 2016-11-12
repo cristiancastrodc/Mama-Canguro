@@ -29,7 +29,7 @@
   $grado = $_POST["txtGrado"];
   $estado = $_POST["txtEstado"];
   // Creamos la sentencia a ejecutar
-  $sentencia = "CALL sp_tapaciente_actualizar('$id_paciente','$nombres', '$apellidos', '$domicilio', '$fecha_nac', '$telefono','$grado','$estado','$sexo','$ocupacion','$dni');";
+  $sentencia = "CALL sp_tapaciente_actualizar('$dni','$nombres', '$apellidos', '$domicilio', '$fecha_nac', '$telefono','$grado','$estado','$sexo','$ocupacion','$dni');";
   if (mysqli_query($conexion, $sentencia)) {
     header("Location: confirmacion.php?nromensaje=6");
     exit;

@@ -19,7 +19,7 @@
 
   function _print_footer(){
   echo "<footer class='site-footer'>";
-    echo "<div class='text-center'>Mamá Canguro Solution - rc1.05.07.1</div>";
+    echo "<div class='text-center'>Mamá Canguro Solution - v1.0.0</div>";
     echo "<div class='text-center'>2015 - Copyright BLENS 101</div>";
   echo "</footer>";
   }

@@ -132,6 +132,25 @@
   }
 
   function _print_antecedentes_generales($conexion, $id_paciente) {
+    $Menarquia3 = '';
+    $Irs3 = '';
+    $RegimenCatamenial3  = '';
+    $FormulaObstetrica3 = '';
+    $MetodoPPFF3 = '';
+    $Alergias3 = '';
+    $Hipertension3 = '';
+    $Cirugias3 = '';
+    $TBC3 = '';
+    $ETC3 = '';
+    $Otros = '';
+    $Temperatura3 = '';
+    $P3 = '';
+    $PresionArterial3 = '';
+    $Peso3 = '';
+    $PAP3 = '';
+    $FUR3 = '';
+    $FUM3 = '';
+
     $sentencia = "CALL sp_taantecedente_medicina_general_existe('$id_paciente');";
     if (mysqli_multi_query($conexion, $sentencia)) {
       if ($resultado = mysqli_store_result($conexion)) {
@@ -260,6 +279,16 @@
   }
 
   function _print_antecedentes_ginecologicos($conexion, $id_paciente) {
+    $Menarquia = '';
+    $Irs = '';
+    $RegimenCatamenial = '';
+    $FormulaObstetrica = '';
+    $MetodoPPFF = '';
+    $Alergias_G = '';
+    $PAP_G = '';
+    $FUR_G = '';
+    $FUM_G = '';
+
     $sentencia = "CALL sp_taantecedente_ginecologico_existe('$id_paciente');";
     if (mysqli_multi_query($conexion, $sentencia)) {
       if ($resultado = mysqli_store_result($conexion)) {
@@ -331,6 +360,21 @@
   }
 
   function _print_antecedentes_pediatricos($conexion, $id_paciente) {
+    $PesoNacer1 = '';
+    $Talla1 = '';
+    $Vacunas1  = '';
+    $Complicaciones1 = '';
+    $Culminacion1 = '';
+    $Parto1 = '';
+    $NacidoCesarea1 = '';
+    $Ictericia1 = '';
+    $ComplicacionesNeonatales1 = '';
+    $LecheMaterna1 = '';
+    $EdadAblactacion1 = '';
+    $AlimientacionActual1 = '';
+    $Nro_hijo1 = '';
+    $Alergias1 = '';
+
     $sentencia = "CALL sp_taantecedente_pediatricos_existe('$id_paciente');";
     if (mysqli_multi_query($conexion, $sentencia)) {
       if ($resultado = mysqli_store_result($conexion)) {

@@ -36,7 +36,7 @@
   $estado = $_POST["txtestado"];
   // Creamos la sentencia a ejecutar
   $sentencia = "CALL sp_tapaciente_actualizar('";
-  $sentencia .= $identificador2."','";
+  $sentencia .= $dni."','";
   if ($nombres2 == "" && $apellidos2 == "") {
     $sentencia .= $nombres1."','".$apellidos1."','";
   }

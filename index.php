@@ -34,7 +34,7 @@
           <div class="modal-body">
             <form class="form col-md-12 center-block" action="validar-usuario.php" method="post">
               <div class="form-group">
-                <input type="text" class="form-control input-lg" maxlength="8" name="txtUsuario" id="txtUsuario" placeholder="Nombre Usuario" autofocus>
+                <input type="text" class="form-control input-lg" maxlength="8" name="txtUsuario" id="txtUsuario" placeholder="DNI Usuario" autofocus>
               </div>
               <div cl ass="form-group">
                 <input type="password" class="form-control input-lg" id="txtClave" name="txtClave" placeholder="Clave">

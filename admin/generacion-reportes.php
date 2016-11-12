@@ -83,8 +83,8 @@
                     _r_estadistico_pacientes($conexion, $fecha_inicio, $fecha_fin);
                   }
                 ?>
-
               </div>
+                <a href="reportes.php" class="btn btn-danger btn-block"><i class="fa-chevron-circle-left fa"></i> Volver</a>
             </div>
           </div>
         </section>

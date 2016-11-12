@@ -29,75 +29,75 @@ $(document).ready(function(){
   $("#r1_fecha").datepicker({ dateFormat: "yy-mm-dd", changeMonth: true });
   $("#r2_fecha").datepicker({ dateFormat: "yy-mm-dd", changeMonth: true });
 
-  $("#r3_fecha_inicio").datepicker({ 
-    dateFormat: "yy-mm-dd", 
+  $("#r3_fecha_inicio").datepicker({
+    dateFormat: "yy-mm-dd",
     changeMonth: true,
     onClose: function( selectedDate ){
       $("#r3_fecha_fin").datepicker( "option", "minDate", selectedDate );
     }
   });
-  $("#r3_fecha_fin").datepicker({ 
-    dateFormat: "yy-mm-dd", 
+  $("#r3_fecha_fin").datepicker({
+    dateFormat: "yy-mm-dd",
     changeMonth: true,
     onClose: function( selectedDate ){
       $("#r3_fecha_inicio").datepicker( "option", "maxDate", selectedDate );
     }
   });
 
-  $("#r5_fecha_inicio").datepicker({ 
-    dateFormat: "yy-mm-dd", 
+  $("#r5_fecha_inicio").datepicker({
+    dateFormat: "yy-mm-dd",
     changeMonth: true,
     onClose: function( selectedDate ){
       $("#r5_fecha_fin").datepicker( "option", "minDate", selectedDate );
     }
   });
-  $("#r5_fecha_fin").datepicker({ 
-    dateFormat: "yy-mm-dd", 
+  $("#r5_fecha_fin").datepicker({
+    dateFormat: "yy-mm-dd",
     changeMonth: true,
     onClose: function( selectedDate ){
       $("#r5_fecha_inicio").datepicker( "option", "maxDate", selectedDate );
     }
   });
 
-  $("#r7_fecha_inicio").datepicker({ 
-    dateFormat: "yy-mm-dd", 
+  $("#r7_fecha_inicio").datepicker({
+    dateFormat: "yy-mm-dd",
     changeMonth: true,
     onClose: function( selectedDate ){
       $("#r7_fecha_fin").datepicker( "option", "minDate", selectedDate );
     }
   });
-  $("#r7_fecha_fin").datepicker({ 
-    dateFormat: "yy-mm-dd", 
+  $("#r7_fecha_fin").datepicker({
+    dateFormat: "yy-mm-dd",
     changeMonth: true,
     onClose: function( selectedDate ){
       $("#r7_fecha_inicio").datepicker( "option", "maxDate", selectedDate );
     }
   });
 
-  $("#r8_fecha_inicio").datepicker({ 
-    dateFormat: "yy-mm-dd", 
+  $("#r8_fecha_inicio").datepicker({
+    dateFormat: "yy-mm-dd",
     changeMonth: true,
     onClose: function( selectedDate ){
       $("#r8_fecha_fin").datepicker( "option", "minDate", selectedDate );
     }
   });
-  $("#r8_fecha_fin").datepicker({ 
-    dateFormat: "yy-mm-dd", 
+  $("#r8_fecha_fin").datepicker({
+    dateFormat: "yy-mm-dd",
     changeMonth: true,
     onClose: function( selectedDate ){
       $("#r8_fecha_inicio").datepicker( "option", "maxDate", selectedDate );
     }
   });
 
-  $("#r9_fecha_inicio").datepicker({ 
-    dateFormat: "yy-mm-dd", 
+  $("#r9_fecha_inicio").datepicker({
+    dateFormat: "yy-mm-dd",
     changeMonth: true,
     onClose: function( selectedDate ){
       $("#r9_fecha_fin").datepicker( "option", "minDate", selectedDate );
     }
   });
-  $("#r9_fecha_fin").datepicker({ 
-    dateFormat: "yy-mm-dd", 
+  $("#r9_fecha_fin").datepicker({
+    dateFormat: "yy-mm-dd",
     changeMonth: true,
     onClose: function( selectedDate ){
       $("#r9_fecha_inicio").datepicker( "option", "maxDate", selectedDate );

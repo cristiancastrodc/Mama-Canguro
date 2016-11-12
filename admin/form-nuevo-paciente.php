@@ -49,7 +49,7 @@
   echo "<div class='form-group'>";
     echo "<label class='col-sm-2 control-label'>Nombres:</label>";
     echo "<div class='col-sm-4'>";
-      echo "<input type='text' class='form-control round-form' id='txtNombres' name='txtNombres' required maxlength='8'>";
+      echo "<input type='text' class='form-control round-form' id='txtNombres' name='txtNombres' required>";
     echo "</div>";
     echo "<label class='col-sm-2 control-label'>Apellidos</label>";
     echo "<div class='col-sm-4'>";
@@ -104,6 +104,6 @@
       echo "</select>";
     echo "</div>";
   echo "</div>";
-  echo "<button type='submit' class='btn btn-primary btn-block'><i class='fa fa-check'></i> GUARDAR (Alt + G)</button>";
+  echo "<button type='submit' class='btn btn-primary btn-block'><i class='fa fa-check'></i> GUARDAR</button>";
   echo "</form>";
 ?>
