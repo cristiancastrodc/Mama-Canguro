@@ -93,6 +93,7 @@
                         <option value="1">Medicina General</option>
                         <option value="2">Ginecología</option>
                         <option value="3">Pediatría</option>
+                        <option value="4">Radiología</option>
                       </select>
                     </div>
                   </div>

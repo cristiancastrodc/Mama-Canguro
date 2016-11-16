@@ -105,6 +105,7 @@
                           <option>biologo</option>
                           <option>secretaria</option>
                           <option>doctor</option>
+                          <option>radiologo</option>
                         </select>
                       </div>
                     </div>
