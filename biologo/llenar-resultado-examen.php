@@ -232,7 +232,7 @@
           var Atencion = $("#NroAtencion").val();
           var Examen = $("#cleditor").val();
           $.ajax({
-            method: "GET",
+            method: "POST",
             url: "guardar-examen.php",
             data: {
               nroatencion : Atencion,
