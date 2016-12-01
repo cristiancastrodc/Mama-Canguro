@@ -1,21 +1,23 @@
+Radiólogo:
+ ☐ Finalizar módulos.
 Admin:
- ☐ Atención: Registrar varios servicios (próxima versión).
- ☐ Arreglar los formatos de los exámenes (crear-servicio.php, modificar-servicio.php, atender-resultado-examen.php)
- ☐ Eliminación (inhabilitación) de servicios
- ☐ usuarios: si el tipo es radiologo no se tiene que seleccionar ninguna especialidad.
-Secretaria:
- ☐ Atención: Registrar varios servicios (próxima versión).
+ ☐ Arreglar los formatos de los exámenes (crear-servicio.php, modificar-servicio.php, atender-resultado-examen.php).
+ ☐ Eliminación (inhabilitación) de servicios.
+ ☐ Usuarios: si el tipo es radiologo no se tiene que seleccionar ninguna especialidad.
 Biólogo:
  ☐ Corregir el orden de las muestras en Recepción y Llenado de Resultados.
+ ☐ Modificar los formatos de exámenes.
 Ginecología:
- ☐ Agregar campos para: Anamnemesis, signos y sintomas, hallazgos clinicos.
+ ☐ Agregar campos para: Anamnemesis (, signos y sintomas, hallazgos clinicos).
  ☐ Corregir al momento de ver historia clinica se muestran todos los examenes de cualquier especialidad incluso los examenes pendientes. corregir a que se vean solo los de la especialidad y que esten listo con resultados.
- ☐ Cuando sea consulta tambien se tiene que ver la historia clinica - solo ginecología?
+ ☐ Cuando sea consulta (procedimiento) tambien se tiene que ver la historia clinica - solo ginecología?
 General:
  ☐ Opción para imprimir historia clinica.
  ☐ Procedimientos se tienen que incluir en historia clinica.
  ☐ Modificar los campos de administrar usuarios.
 
+Próxima versión:
+ ☐ Atención: Registrar varios servicios
 ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
 Archive:
  ✔ Cambiar el identificador del paciente al DNI. @done (16-11-12 06:45) @project(Secretaria)

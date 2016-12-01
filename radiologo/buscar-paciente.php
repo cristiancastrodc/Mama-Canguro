@@ -70,7 +70,7 @@
                         <td><?=$apellidos?></td>
                         <td><?=$nombres?></td>
                         <td>
-                          <button class='btn btn-primary btn-buscar-paciente'>Buscar</button>
+                          <button class='btn btn-primary btn-buscar-paciente' data-dni="<?=$dni?>">Buscar</button>
                         </td>
                       </tr>
                               <?php
@@ -93,16 +93,8 @@
               <div class="panel-heading">Pendientes de Diagnóstico</div>
               <div class="panel-body">
                 <div class="table-responsive">
-                  <table class="table table-striped table-bordered table-hover" id="tabla-atenciones">
-                    <thead>
-                      <tr>
-                        <th>Servicio</th>
-                        <th>Fecha de Atención</th>
-                        <th>Fecha de Diagnóstico</th>
-                        <th>Acciones</th>
-                      </tr>
-                    </thead>
-                  </table>
+                  <div id="tabla-atenciones">
+                  </div>
                 </div>
               </div>
             </div>
