@@ -5,19 +5,13 @@
   if(!isset($_SESSION)) {
     session_start();
   }  // Si el usuario no es de tipo administrador, o no está logueado, redireccionar
-  _redireccionar('doctor');
+  _redireccionar('radiologo');
   // Recuper el identificador del usuario
   $User = $_SESSION["UsuarioLogueado"];
   // Recuperar la informacion enviada por POST
-  $id_paciente = $_POST["DNI"];
-  $anamnemesis = $_POST['txtAnamnemesis'];
-  $anamnemesis = utf8_decode($anamnemesis);
   $diagnostico = $_POST['txtDiagnostico'];
   $diagnostico = utf8_decode($diagnostico);
-  $tratamiento = $_POST['txtTratamiento'];
-  $tratamiento = utf8_decode($tratamiento);
   $nro_atencion = $_POST['nroAtencion'];
-  $proxima_cita = $_POST['txtCita'];
   // Otros valores a almacenar
   $fecha_consulta = date('Y-m-d');
   // Conexion al servidor
@@ -32,12 +26,21 @@
     mysqli_free_result($resultado);
   }
   mysqli_next_result($conexion);
+  $sentencia = "CALL sp_taatencion_paciente($nro_atencion)";
+  if (mysqli_multi_query($conexion, $sentencia)) {
+    if ($resultado = mysqli_store_result($conexion)) {
+      if ($fila = mysqli_fetch_array($resultado)) {
+        $id_paciente = $fila["chr_dni_paciente"];
+      }
+      mysqli_free_result($resultado);
+    }
+    mysqli_next_result($conexion);
+  }
   $nro_detalle = intval($nro_detalle) + 1;
   // Almacenar la consulta
-  $sentencia = "CALL sp_tadetalle_historia_insertar('$id_paciente',$nro_detalle,'$fecha_consulta','$diagnostico','$tratamiento',$nro_atencion,'$User','$proxima_cita', '$anamnemesis');";
-  echo $sentencia;
+  $sentencia = "CALL sp_tadetalle_historia_insertar('$id_paciente', $nro_detalle, '$fecha_consulta', '$diagnostico', '', $nro_atencion, '$User', '', '');";
   if (mysqli_multi_query($conexion, $sentencia)) {
-    header("Location: confirmacion.php");
+    header("Location: buscar-paciente.php");
     exit;
   } else {
     echo mysqli_error($conexion);

@@ -11,6 +11,8 @@
   $User = $_SESSION["UsuarioLogueado"];
   // Recuperar la informacion enviada por POST
   $id_paciente = $_POST["DNI"];
+  $anamnemesis = $_POST['txtAnamnemesis'];
+  $anamnemesis = utf8_decode($anamnemesis);
   $diagnostico = $_POST['txtDiagnostico'];
   $diagnostico = utf8_decode($diagnostico);
   $tratamiento = $_POST['txtTratamiento'];
@@ -31,8 +33,9 @@
     mysqli_free_result($resultado);
   }
   mysqli_next_result($conexion);
+  $nro_detalle = intval($nro_detalle) + 1;
   // Almacenar la consulta
-  $sentencia = "CALL sp_tadetalle_historia_insertar('$id_paciente',$nro_detalle,'$fecha_consulta','$diagnostico','$tratamiento',$nro_atencion,'$User','$proxima_cita');";
+  $sentencia = "CALL sp_tadetalle_historia_insertar('$id_paciente',$nro_detalle,'$fecha_consulta','$diagnostico','$tratamiento',$nro_atencion,'$User','$proxima_cita', '$anamnemesis');";
   echo $sentencia;
   if (mysqli_multi_query($conexion, $sentencia)) {
     header("Location: confirmacion.php?nromensaje=5");

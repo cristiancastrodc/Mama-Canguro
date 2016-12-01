@@ -1,5 +1,4 @@
 Radiólogo:
- ☐ Finalizar módulos.
 Admin:
  ☐ Arreglar los formatos de los exámenes (crear-servicio.php, modificar-servicio.php, atender-resultado-examen.php).
  ☐ Eliminación (inhabilitación) de servicios.
@@ -8,18 +7,20 @@ Biólogo:
  ☐ Corregir el orden de las muestras en Recepción y Llenado de Resultados.
  ☐ Modificar los formatos de exámenes.
 Ginecología:
- ☐ Agregar campos para: Anamnemesis (, signos y sintomas, hallazgos clinicos).
  ☐ Corregir al momento de ver historia clinica se muestran todos los examenes de cualquier especialidad incluso los examenes pendientes. corregir a que se vean solo los de la especialidad y que esten listo con resultados.
  ☐ Cuando sea consulta (procedimiento) tambien se tiene que ver la historia clinica - solo ginecología?
 General:
  ☐ Opción para imprimir historia clinica.
  ☐ Procedimientos se tienen que incluir en historia clinica.
  ☐ Modificar los campos de administrar usuarios.
+ ☐ La historia clínica debe de mostrar el servicio (radiología o procedimiento).
 
 Próxima versión:
  ☐ Atención: Registrar varios servicios
 ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
 Archive:
+ ✔ Agregar campos para: Anamnemesis (, signos y sintomas, hallazgos clinicos). @started @done (16-12-01 18:30) @project(Ginecología)
+ ✔ Finalizar módulos. @done (16-12-01 17:58) @project(Radiólogo)
  ✔ Cambiar el identificador del paciente al DNI. @done (16-11-12 06:45) @project(Secretaria)
  ✔ Reportes: Botón que regresa a la anterior página. @done (16-11-12 06:40) @project(Admin)
  ✔ Corregir el orden de las muestras en Recepción y Llenado de Resultados. @done (16-11-12 06:31) @project(Admin)

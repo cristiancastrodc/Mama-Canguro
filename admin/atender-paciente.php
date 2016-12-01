@@ -111,6 +111,12 @@
                   <input type='hidden' class='form-control' name='DNI' id='DNI' value='<?=$id_paciente?>'>
                   <input type='hidden' class='form-control' name='nroAtencion' id='nroAtencion' value='<?=$nro_atencion?>'>
                   <div class="form-group">
+                    <label class="col-sm-2 control-label">Anamnemesis</label>
+                    <div class="col-sm-10">
+                      <textarea id="txtAnamnemesis" name="txtAnamnemesis" rows="4" class="form-control" required></textarea>
+                    </div>
+                  </div>
+                  <div class="form-group">
                     <label class="col-sm-2 control-label">Diagnóstico</label>
                     <div class="col-sm-10">
                       <textarea id="txtDiagnostico" name="txtDiagnostico" rows="4" class="form-control" required></textarea>

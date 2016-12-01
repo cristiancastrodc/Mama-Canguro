@@ -40,10 +40,10 @@
         <?php _print_menu(); ?>
       </div>
       <div class="container">
-        <div class="row">
+        <div class="row m-t-15">
           <div class="col-sm-12">
             <div class="panel panel-default">
-              <div class="panel-heading">Pacientes de Laboratorio</div>
+              <div class="panel-heading">Pacientes de Radiología</div>
               <div class="panel-body">
                 <div class="table-responsive">
                   <table class="table table-striped table-bordered table-hover table-condensed" id="tabla-pacientes">
@@ -90,7 +90,7 @@
         <div class="row">
           <div class="col-sm-12">
             <div class="panel panel-default">
-              <div class="panel-heading">Pendientes de Diagnóstico</div>
+              <div class="panel-heading">Atenciones</div>
               <div class="panel-body">
                 <div class="table-responsive">
                   <div id="tabla-atenciones">
@@ -115,7 +115,7 @@
   <script type="text/javascript" src="assets/js/easing.js"></script>
   <script src="assets/js/dataTables/jquery.dataTables.js"></script>
   <script src="assets/js/dataTables/dataTables.bootstrap.js"></script>
-  <script src="../assets/js/lock.js"></script>
+  <!-- script src="../assets/js/lock.js"></script-->
   <script src="assets/js/buscar-paciente.js"></script>
   <script>
     new WOW().init();

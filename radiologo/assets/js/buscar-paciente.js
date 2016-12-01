@@ -19,3 +19,12 @@ $('#tabla-pacientes').on('click', '.btn-buscar-paciente', function(event) {
     $('#tabla-atenciones > table').dataTable();
   });
 });
+
+$('#tabla-atenciones').on('click', '.btn-atender-paciente', function(event) {
+  event.preventDefault();
+  var nro_atencion = $(this).data('nro-atencion');
+  var ruta = 'atender-paciente.php?nro_atencion=' + nro_atencion;
+  $.get(ruta, function() {
+    window.location.reload();
+  });
+});
