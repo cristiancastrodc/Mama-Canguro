@@ -2,15 +2,26 @@ Admin:
  ☐ Atención: Registrar varios servicios (próxima versión).
  ☐ Arreglar los formatos de los exámenes (crear-servicio.php, modificar-servicio.php, atender-resultado-examen.php)
  ☐ Eliminación (inhabilitación) de servicios
- ✔ Registrar Paciente: Campo de nombre muy corto. @done (16-11-12 05:44)
- ✔ Cambiar el identificador del paciente al DNI. @done (16-11-12 05:55)
- ✔ Doctor - Atención: Corregir antecedentes (probar con paciente nuevo). @done (16-11-12 05:58)
- ✔ Corregir el orden de las muestras en Recepción y Llenado de Resultados. @done (16-11-12 06:31)
- ✔ Reportes: Botón que regresa a la anterior página. @done (16-11-12 06:40)
+ ☐ usuarios: si el tipo es radiologo no se tiene que seleccionar ninguna especialidad.
 Secretaria:
  ☐ Atención: Registrar varios servicios (próxima versión).
- ✔ Cambiar el identificador del paciente al DNI. @done (16-11-12 06:45)
 Biólogo:
  ☐ Corregir el orden de las muestras en Recepción y Llenado de Resultados.
+Ginecología:
+ ☐ Agregar campos para: Anamnemesis, signos y sintomas, hallazgos clinicos.
+ ☐ Corregir al momento de ver historia clinica se muestran todos los examenes de cualquier especialidad incluso los examenes pendientes. corregir a que se vean solo los de la especialidad y que esten listo con resultados.
+ ☐ Cuando sea consulta tambien se tiene que ver la historia clinica - solo ginecología?
 General:
- ✔ En el login corregir Nombre Usuario por DNI Usuario. @done (16-11-12 05:33)
+ ☐ Opción para imprimir historia clinica.
+ ☐ Procedimientos se tienen que incluir en historia clinica.
+ ☐ Modificar los campos de administrar usuarios.
+
+＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
+Archive:
+ ✔ Cambiar el identificador del paciente al DNI. @done (16-11-12 06:45) @project(Secretaria)
+ ✔ Reportes: Botón que regresa a la anterior página. @done (16-11-12 06:40) @project(Admin)
+ ✔ Corregir el orden de las muestras en Recepción y Llenado de Resultados. @done (16-11-12 06:31) @project(Admin)
+ ✔ Doctor - Atención: Corregir antecedentes (probar con paciente nuevo). @done (16-11-12 05:58) @project(Admin)
+ ✔ Cambiar el identificador del paciente al DNI. @done (16-11-12 05:55) @project(Admin)
+ ✔ Registrar Paciente: Campo de nombre muy corto. @done (16-11-12 05:44) @project(Admin)
+ ✔ En el login corregir Nombre Usuario por DNI Usuario. @done (16-11-12 05:33) @project(General)
